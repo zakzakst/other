@@ -1,0 +1,26 @@
+REM ******************************
+REM ショートカット実行 バッチファイル
+REM ※利用する時はファイル拡張子を「.bat」に変更する
+REM ※文字コードは「Shift JIS」を利用する（コマンド実行時の文字化けを防ぐため）
+REM ******************************
+
+@echo off
+
+REM 各種設定
+set SHORTCUTS_FOLDER=C:\Users\Owner\Desktop\ショートカット
+
+REM ショートカットファイルがあるディレクトリに移動
+cd %SHORTCUTS_FOLDER%
+
+REM WEBページへのリンクを開く
+for %%i in (*.url) do (
+  start %%i
+)
+
+REM 各種ファイルのショートカットを開く
+for %%j in (*.lnk) do (
+  start %%j
+)
+
+REM 元のディレクトリに戻る
+cd /D %~dp0

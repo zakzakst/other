@@ -1,0 +1,27 @@
+REM ******************************
+REM フォルダコピー バッチファイル
+REM ※利用する時はファイル拡張子を「.bat」に変更する
+REM ※文字コードは「Shift JIS」を利用する（コマンド実行時の文字化けを防ぐため）
+REM ******************************
+
+@echo off
+
+REM 各種設定
+set BASE_FILE_PATH=C:\Users\Owner\Desktop\バッチファイル\copy
+set DIST_FILE_PATH=C:\Users\Owner\Desktop\バッチファイル\dist
+
+REM 今日の日付の文字列を作成
+set folderStr=%date:~0,4%%date:~5,2%%date:~8,2%
+set updateStr=%date:~5,2%/%date:~8,2%/%date:~0,4%
+
+REM コピーするファイルの最終更新日付を入力する
+set /P lastUpdated="指定する最終更新日を入力してください（MM/DD/YYYY）"
+REM 入力がない場合は今日の日付を指定
+if "%lastUpdated%"=="" (
+  set lastUpdated=%updateStr%
+)
+
+REM コピー元ファイルが存在する場合、日付のフォルダ配下にコピー
+if exist %BASE_FILE_PATH% (
+  xcopy %BASE_FILE_PATH% %DIST_FILE_PATH%\%folderStr%\ /E /D:%lastUpdated%
+)
