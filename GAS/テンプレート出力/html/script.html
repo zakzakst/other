@@ -1,0 +1,37 @@
+<script>
+function copyText(json) {
+  // 出力テキストを作成
+  var outputText = makeOutputText(json);
+
+  // クリップボードコピーの処理を設定
+  navigator.clipboard.writeText(outputText).then(function() {
+    alert("出力テキストをクリップボードにコピーしました");
+  }, function() {
+    alert("コピーに失敗しました");
+  });
+}
+
+function makeOutputText(json) {
+  var outputArray = [];
+  var data = json.data;
+  var templateData = json.template;
+
+  // 各データごとにテンプレート処理を実行
+  for(var i = 0; i < data.length; i++) {
+    // テンプレート文字列の対象箇所を置換
+    var str = templateData.template;
+    var dataKeys = Object.keys(data[i]);
+    for(var j = 0; j < dataKeys.length; j++) {
+      str = str.replace(new RegExp('{{{' + dataKeys[j] + '}}}', 'g'), data[i][dataKeys[j]]);
+    }
+
+    // 置換した文字列を配列に追加
+    outputArray.push(str);
+  }
+
+  // 出力テキストを作成
+  var outputText = templateData.insertBefore + outputArray.join(templateData.insertMiddle) + templateData.insertAfter;
+
+  return outputText;
+}
+</script>

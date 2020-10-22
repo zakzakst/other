@@ -1,0 +1,129 @@
+<script>
+
+//==============================
+// ■ 要素の設定
+//==============================
+var elements = {
+  checkForm: document.getElementById('check-form'),
+  checkBtn: document.getElementById('check-form__btn'),
+  resultSection: document.getElementById('check-result'),
+  resultTab: document.getElementById('check-result__tab'),
+  resultTxt: document.getElementById('check-result__txt'),
+  resultFix: document.getElementById('check-result__fix'),
+}
+
+
+//==============================
+// ■ 校正結果タブの切り替え
+//==============================
+function switchResultTab() {
+  elements.resultTab.addEventListener('click', function(e) {
+    // リンク遷移の処理を止める
+    e.preventDefault();
+
+    // 表示するテキストを設定
+    var clickItem = e.target;
+    var targetId = clickItem.getAttribute('href').slice(1);
+
+    // テキスト両方を非表示にする
+    elements.resultTxt.classList.add('is-hidden');
+    elements.resultFix.classList.add('is-hidden');
+
+    // 対象のテキストを表示する
+    document.getElementById(targetId).classList.remove('is-hidden');
+
+    // アクティブタブを変更する
+    var tabItems = elements.resultTab.children;
+    Array.from(tabItems).forEach(function(tab) {
+      tab.classList.remove('is-active');
+    });
+    clickItem.parentNode.classList.add('is-active');
+  });
+}
+
+
+//==============================
+// ■ 校正結果のクリア
+//==============================
+function clearResult() {
+  // 結果のテキストを削除する
+  elements.resultTxt.innerHTML = '';
+  elements.resultFix.innerHTML = '';
+
+  // 「結果確認」を表示して、「修正適用」を非表示にする
+  elements.resultTxt.classList.remove('is-hidden');
+  elements.resultFix.classList.add('is-hidden');
+
+  // アクティブタブを「結果確認」にする
+  var tabItems = elements.resultTab.children;
+  Array.from(tabItems).forEach(function(tab) {
+    tab.classList.remove('is-active');
+  });
+  tabItems[0].classList.add('is-active');
+
+  // 「校正結果」セクションを非表示にする
+  elements.resultSection.classList.add('is-hidden');
+}
+
+
+//==============================
+// ■ チェックの実行
+//==============================
+function checkText(checkList) {
+  // 入力フォームのテキストを取得
+  var inputTxt = elements.checkForm.value;
+  if(!inputTxt) {
+    alert('チェックする文章を入力してください');
+    return;
+  }
+
+  // チェック結果を取得
+  var checkResult = getCheckResult(inputTxt, checkList);
+
+  // 改行を<br>に変更して「結果確認」テキストを挿入
+  elements.resultTxt.innerHTML = checkResult.resultText.replace(/\r\n|\r|\n/g, '<br>');
+
+  // 改行を<br>に変更して「修正適用」テキストを挿入
+  elements.resultFix.innerHTML = checkResult.resultFix.replace(/\r\n|\r|\n/g, '<br>');
+
+  // 「校正結果」セクションを表示する
+  elements.resultSection.classList.remove('is-hidden');
+  elements.resultSection.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
+}
+
+
+//==============================
+// ■ チェック結果の取得
+//==============================
+function getCheckResult(text, checkList) {
+  var resultText = text;
+  var resultFix = text;
+  for(var i = 0; i < checkList.length; i++) {
+    var check = checkList[i];
+    if(!check.text) { continue; }
+    var regexp = new RegExp(check.text, 'g');
+    // 「結果確認」への置換
+    resultText = resultText.replace(regexp, '<span class="check-txt" title="' + check.remarks + '">' + '$&' + '</span>');
+    // 「修正適用」への置換
+    resultFix = resultFix.replace(regexp, '<span class="fix-txt">' + check.fix + '</span>');
+  };
+  return {
+    resultText: resultText,
+    resultFix: resultFix,
+  };
+}
+
+
+//==============================
+// ■ ページの初期化
+//==============================
+function init() {
+  clearResult();
+  switchResultTab();
+}
+init();
+
+</script>

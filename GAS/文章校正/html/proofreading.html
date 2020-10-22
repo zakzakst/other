@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>文章校正</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <?!= HtmlService.createHtmlOutputFromFile('html/style').getContent(); ?>
+  </head>
+  <body data-page="<?=data.sheetNum ?>">
+    <div class="tabs is-centered is-boxed">
+      <ul id="js-nav">
+        <? for(var n in data.navList) {
+          var nav = data.navList[n]; ?>
+          <li>
+            <a class="page-link" href="<?=data.appUrl ?>?page=<?=(Number(n) + 1) ?>" target="_blank"><?=nav ?></a>
+          </li>
+        <? } ?>
+      </ul>
+    </div>
+    <div class="container content">
+      <section class="section">
+        <h1><?=data.pageInfo.name ?></h1>
+        <p><?=data.pageInfo.description ?></p>
+      </section>
+      <section class="section">
+        <h2 class="title is-4">
+          <span class="icon">
+            <i class="fas fa-info-circle"></i>
+          </span>
+          チェック文章入力フォーム
+        </h2>
+        <div class="field">
+          <div class="control">
+            <textarea class="textarea" id="check-form" placeholder="チェックしたい文章を入力してください"></textarea>
+          </div>
+        </div>
+        <p>
+          <button class="button is-link" id="check-form__btn" onclick="doCheckText();">チェックを実行する</button>
+        </p>
+      </section>
+      <section class="section" id="check-result">
+        <h2 class="title is-4">
+          <span class="icon">
+            <i class="fas fa-info-circle"></i>
+          </span>
+          校正結果
+        </h2>
+        <div>
+          <div class="tabs is-toggle is-fullwidth is-small">
+            <ul id="check-result__tab">
+              <li class="check-result__tab-item">
+                <a href="#check-result__txt">結果確認</a>
+              </li>
+              <li class="check-result__tab-item">
+                <a href="#check-result__fix">修正適用</a>
+              </li>
+            </ul>
+          </div>
+          <div id="check-result__txt"></div>
+          <div id="check-result__fix"></div>
+        </div>
+      </section>
+    </div>
+
+    <?!= HtmlService.createHtmlOutputFromFile('html/script').getContent(); ?>
+
+    <script>
+      // ページ数を取得
+      var body = document.body;
+      var pageNum = body.dataset.page;
+
+      // ナビゲーションにアクティブクラス付与
+      var nav = document.getElementById('js-nav');
+      nav.children[pageNum - 1].classList.add('is-active');
+
+      // 文章校正を実行
+      function doCheckText() {
+        google.script.run.withSuccessHandler(checkText).checkData(pageNum);
+      }
+    </script>
+  </body>
+</html>

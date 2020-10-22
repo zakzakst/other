@@ -1,0 +1,22 @@
+<script>
+  var elements = {
+    inputDate: document.getElementById('js-file-output__input--date'),
+    outputBtn: document.getElementById('js-file-output__btn'),
+  };
+
+  elements.outputBtn.addEventListener('click', function(e) {
+    var date = getDateFormatted();
+    var option = {};
+    option.date = elements.inputDate.checked ? '_' + date : '';
+    google.script.run.fileMake(option);
+  });
+
+  function getDateFormatted() {
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = ('00' + (date.getMonth() + 1)).slice(-2);
+    var day = ('00' + date.getDate()).slice(-2);
+    var dateFormatted = year + month + day;
+    return dateFormatted;
+  }
+</script>

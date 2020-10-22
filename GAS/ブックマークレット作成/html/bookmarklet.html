@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ブックマークレット作成</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+    <div class="container content">
+      <div class="section">
+        <h1>登録用ボタン</h1>
+        <div class="columns">
+          <? for(var i in data) {
+            var bookmarklet = data[i]; ?>
+            <div class="column">
+              <a href="javascript:<?=bookmarklet.funcStr ?>" class="button is-medium is-fullwidth"><?=bookmarklet.name ?></a>
+            </div>
+          <? } ?>
+        </div>
+      </div>
+      <div class="section">
+        <h1>挙動テスト用</h1>
+        <div class="field">
+          <div class="select">
+            <select id="js-select-box">
+              <option>選択肢1</option>
+              <option>選択肢2</option>
+              <option>選択肢3</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <textarea id="js-form-input" class="textarea" placeholder="「フォーム張付」での出力先"></textarea>
+        </div>
+        <p style="word-wrap: break-word;">30000,1200,300,０,１,２,３,４,５,６,７,８,９,Ａ,Ｂ,Ｃ,Ｄ,Ｅ,Ｆ,Ｇ,Ｈ,Ｉ,Ｊ,Ｋ,Ｌ,Ｍ,Ｎ,Ｏ,Ｐ,Ｑ,Ｒ,Ｓ,Ｔ,Ｕ,Ｖ,Ｗ,Ｘ,Ｙ,Ｚ,ａ,ｂ,ｃ,ｄ,ｅ,ｆ,ｇ,ｈ,ｉ,ｊ,ｋ,ｌ,ｍ,ｎ,ｏ,ｐ,ｑ,ｒ,ｓ,ｔ,ｕ,ｖ,ｗ,ｘ,ｙ,ｚ,指定,JS,ＪＳ,JavaScript,。,康和,あ,スマホ,SP,スマートフォン</p>
+      </div>
+    </div>
+  </body>
+</html>
