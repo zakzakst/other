@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <?!= HtmlService.createHtmlOutputFromFile('html/style').getContent(); ?>
+  </head>
+  <body>
+    <p>下記ボタンよりコピーしてください。</p>
+    <div>
+      <select id="templateName">
+        <? for(var i = 0; i < data.templateNames.length; i++) { ?>
+          <option value="<?= data.templateNames[i] ?>"><?= data.templateNames[i] ?></option>
+        <? } ?>
+      </select>
+    </div>
+    <a id="copy-btn" href="#" class="btn" onclick="textOutput();">クリップボードにコピー</a>
+
+    <?!= HtmlService.createHtmlOutputFromFile('html/script').getContent(); ?>
+
+    <script>
+      function textOutput() {
+        var templateName = document.getElementById('templateName').value;
+        google.script.run.withSuccessHandler(copyText).getJsonData('<?= data.type ?>', templateName);
+      }
+    </script>
+  </body>
+</html>

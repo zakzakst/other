@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <?!= HtmlService.createHtmlOutputFromFile('html/style').getContent(); ?>
+  </head>
+  <body>
+    <p>下記ボタンより取得してください。</p>
+    <a id="download" download="<?= data.name ?>" class="btn">JSONファイルをダウンロード</a>
+    <a id="copy-btn" href="#" class="btn">クリップボードにコピー</a>
+
+    <?!= HtmlService.createHtmlOutputFromFile('html/script').getContent(); ?>
+
+    <script>
+      google.script.run.withSuccessHandler(init).getJsonData('<?= data.type ?>');
+    </script>
+  </body>
+</html>

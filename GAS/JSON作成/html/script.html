@@ -1,0 +1,22 @@
+<script>
+var elements = {
+  downloadBtn: document.getElementById('download'),
+  copyBtn: document.getElementById('copy-btn'),
+};
+
+function init(json) {
+  // ダウンロードの処理を設定
+  var blob = new Blob([ json ], { "type" : "application/json" });
+  elements.downloadBtn.href = window.URL.createObjectURL(blob);
+
+  // クリップボードコピーの処理を設定
+  elements.copyBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    navigator.clipboard.writeText(json).then(function() {
+      alert("JSONデータをクリップボードにコピーしました");
+    }, function() {
+      alert("コピーに失敗しました");
+    });
+  });
+}
+</script>
