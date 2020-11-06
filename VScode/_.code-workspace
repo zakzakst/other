@@ -1,0 +1,66 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    // 設定：ファイルエクスプローラーに非表示
+    "files.exclude": {
+      // "dist": true,
+      ".nuxt": true,
+      ".editorconfig": true,
+    },
+    // 設定：拡張機能の推奨表示をしない
+    "extensions.ignoreRecommendations": false,
+    // 設定：Microsoft Edge Developer Tools
+    "vscode-edge-devtools.headless": true,
+    "vscode-edge-devtools.defaultUrl": "http://127.0.0.1:5500/index.html",
+    // 設定：Browser Preview
+    "browser-preview.startUrl": "http://127.0.0.1:5500/index.html",
+    // 設定：Live Server
+    "liveServer.settings.port": 5500,
+    "liveServer.settings.root": "/dist/",
+    "liveServer.settings.NoBrowser": true,
+    // 設定：TODO Highlight
+    "todohighlight.keywords": [
+      {
+        "text": "DEBUG:",
+        "color": "#FFFFFF",
+        "backgroundColor": "#664400"
+      },
+      {
+        "text": "NOTE:",
+        "color": "#FFFFFF",
+        "backgroundColor": "#002288"
+      },
+      {
+        "text": "HACK:",
+        "color": "#FFFFFF",
+        "backgroundColor": "#006600"
+      },
+      {
+        "text": "TODO:",
+        "color": "#FFF",
+        "backgroundColor": "#662200",
+        "overviewRulerColor": "transparent",
+      },
+      {
+        "text": "FIXME",
+        "color": "#FFF",
+        "backgroundColor": "#220088"
+      }
+    ],
+    "todohighlight.defaultStyle": {
+      "overviewRulerColor": "transparent",
+      "isWholeLine": false
+    },
+    // 設定：Todo+
+    "todo.colors.tag": "#666666",
+    "todo.colors.comment": "#666666",
+    "todo.colors.done": "#448844",
+    "todo.colors.cancelled": "#884444",
+    "todo.colors.project": "#99dddd",
+    "todo.colors.projectStatistics": "#99dddd",
+  }
+}

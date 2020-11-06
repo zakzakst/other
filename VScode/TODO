@@ -1,0 +1,35 @@
+TODO:
+  ☐ やること1
+  ☐ やること2
+  ☐ やること3
+
+Archive:
+
+Memo:
+  ■■■ 参考 ■■■
+
+  ■■■ 反省など ■■■
+
+
+
+Sample1:
+  ☐ Item
+  ✔ Item @done(20-09-25 23:07)
+  ✘ Item @cancelled(20-09-25 23:07)
+
+Sample2:
+  ☐ Item @critical
+  ☐ Item @high
+  ☐ Item @today
+  ☐ Item @low
+
+Sample3:
+  ☐ Item @3d
+  ☐ Item @3h
+  ☐ Item @2h
+  ☐ Item @3m
+
+使い方参考
+https://fereria.github.io/reincarnation_tech/98_Other/VSCode/vscode_task/
+
+Todo:Open Embedded　タスクリストの作成
