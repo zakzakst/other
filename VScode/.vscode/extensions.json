@@ -1,0 +1,26 @@
+{
+  // 拡張機能の検索BOXで「@recommended」を入力した時に一括表示
+  "recommendations": [
+    "hookyqr.beautify", // Beautify
+    "alefragnani.bookmarks", // Bookmarks
+    "coenraads.bracket-pair-colorizer-2", // Bracket Pair Colorizer 2
+    "auchenberg.vscode-browser-preview", // Browser Preview
+    "streetsidesoftware.code-spell-checker", // Code Spell Checker
+    "msjsdiag.debugger-for-chrome", // Debugger for Chrome
+    "digitalbrainstem.javascript-ejs-support", // EJS Language Support
+    "dbaeumer.vscode-eslint", // ESLint
+    "donjayamanne.githistory", // Git History
+    "ms-ceintl.vscode-language-pack-ja", // Japanese Language Pack
+    "whtouche.vscode-js-console-utils", // javascript console utils
+    "ritwickdey.liveserver", // Live Server
+    "ms-vsliveshare.vsliveshare-pack", // Live Share Extension Pack
+    "shd101wyy.markdown-preview-enhanced", // Markdown Preview Enhanced
+    "marp-team.marp-vscode", // Marp for VS Code
+    "ms-edgedevtools.vscode-edge-devtools", // Microsoft Edge Developer Tools
+    "henoc.svgeditor", // SVG Editor
+    "wayou.vscode-todo-highlight", // TODO Highlight
+    "fabiospampinato.vscode-todo-plus", // Todo+
+    "octref.vetur", // Vetur
+    "ronnidc.nunjucks", // Nunjucks
+  ]
+}

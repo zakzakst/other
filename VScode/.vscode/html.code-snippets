@@ -1,0 +1,13 @@
+{
+  "sample snippet": {
+    "scope": "html",
+    "prefix": ["sample", "my-section"],
+    "body": [
+      "<section>",
+        "\t<h1 class=\"my-heading\">${1:見出しが入ります}</h1>",
+        "\t<p class=\"my-text\"></p>",
+      "</section>"
+    ],
+    "description": "スニペットサンプル"
+  }
+}
