@@ -2,8 +2,8 @@
   "version": "0.1",
   "language": "ja",
   "words": [
-      "fuga",
-      "hoge"
+      "toggle",
+      "animated"
   ],
   "enabledLanguageIds": [
     "html"
