@@ -1,0 +1,58 @@
+/*
+1.[ファイル] > [ユーザー設定] > [キーボードショートカット]
+2.JSONを開くアイコンをクリック（参考：https://code.visualstudio.com/docs/getstarted/keybindings#_advanced-customization）
+3.下記の内容をペースト
+*/
+[
+  {
+    // タグの外側を選択
+    "key": "ctrl+shift+T",
+    "command": "editor.emmet.action.balanceOut",
+    "when": "editorTextFocus"
+  },
+  {
+    // タグの内側を選択
+    "key": "ctrl+alt+T",
+    "command": "editor.emmet.action.balanceIn",
+    "when": "editorTextFocus"
+  },
+  {
+    // 選択中のタグを削除（タグの中は削除されない）
+    "key": "ctrl+shift+E",
+    "command": "editor.emmet.action.removeTag",
+    "when": "editorTextFocus"
+  },
+  {
+    // もう片方のタグに移動（開きタグにフォーカスしていれば閉じタグに、閉じタグにフォーカスしていれば開きタグに移動）
+    "key": "ctrl+shift+Q",
+    "command": "editor.emmet.action.matchTag",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+A",
+    "command": "editor.emmet.action.wrapWithAbbreviation",
+    "when": "editorTextFocus"
+  },
+  {
+    // 複数行の記述を一行にする
+    "key": "ctrl+shift+M",
+    "command": "editor.emmet.action.mergeLines",
+    "when": "editorTextFocus"
+  },
+  {
+    // プラグイン「beautify」の実行
+    "key": "ctrl+shift+b",
+    "command": "HookyQR.beautify",
+    "when": "editorTextFocus"
+  },
+  {
+    // <br>を挿入
+    // 参考：https://qiita.com/ASA3lN/items/b1dbd8e2d7681c2264b7
+    "key": "shift+enter",
+    "command": "type",
+    "args": {
+        "text": "<br>"
+    },
+    "when": "editorTextFocus && editorLangId == 'html'"
+  }
+]
