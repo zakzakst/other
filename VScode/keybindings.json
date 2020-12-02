@@ -54,5 +54,13 @@
         "text": "<br>"
     },
     "when": "editorTextFocus && editorLangId == 'html'"
+  },
+  {
+    // タスクの実行
+    // 「.vscode/tasks.json」のlabelの値をargsに設定する
+    // 参考：https://www.koga1020.com/posts/vscode-mix-test
+    "key": "ctrl+g",
+    "command": "workbench.action.tasks.runTask",
+    "args": "npm: start"
   }
 ]
