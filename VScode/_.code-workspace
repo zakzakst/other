@@ -5,6 +5,11 @@
     }
   ],
   "settings": {
+    // 設定：配色の変更
+    // 参考：https://qiita.com/deren2525/items/6bc099ae8c05e3076055 、 https://code.visualstudio.com/api/references/theme-color
+    "workbench.colorCustomizations": {
+      "titleBar.activeBackground":"#660000"
+    },
     // 設定：ファイルエクスプローラーに非表示
     "files.exclude": {
       // "dist": true,
