@@ -1,0 +1,10 @@
+// コマンドパレットから「Tasks: Configure Task」で作成する
+// 参考：https://www.koga1020.com/posts/vscode-mix-test
+{
+  "version": "2.0.0",
+  "tasks": [{
+    "type": "npm",
+    "script": "start",
+    "label": "npm: start",
+  }]
+}
