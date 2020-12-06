@@ -67,14 +67,27 @@
     "todo.colors.cancelled": "#884444",
     "todo.colors.project": "#99dddd",
     "todo.colors.projectStatistics": "#99dddd",
-    "editor.formatOnSave": true,
     // 設定：stylelint
-    // 参考：https://qiita.com/y-w/items/bd7f11013fe34b69f0df、https://qiita.com/nabepon/items/4168eae542861cfd69f7
+    // 参考：https://qiita.com/y-w/items/bd7f11013fe34b69f0df、https://qiita.com/nabepon/items/4168eae542861cfd69f7、https://qiita.com/morishitter/items/fefa1de3137036c7d9c6、https://qiita.com/DesignChips/items/cd5282dba553026757c8、https://ma-vericks.com/vscode-prettier/
     "css.validate": false,
     "scss.validate": false,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[scss]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    // 設定：eslint
+    // 参考：https://qiita.com/iShinkai/items/6f65b042618b76525659、https://qiita.com/yuma-ito-bd/items/cca7490fd7e300bbf169、https://qiita.com/uggds/items/301c1c43f8b9ffbc52d7
+    "javascript.validate.enable": false,
+    "[js]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    // 自動保存を有効化
+    "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.fixAll.stylelint": true
+      "source.fixAll.stylelint": true,
+      "source.fixAll.eslint": true
     }
   }
 }
