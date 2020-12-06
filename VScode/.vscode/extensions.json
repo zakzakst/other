@@ -17,10 +17,12 @@
     "shd101wyy.markdown-preview-enhanced", // Markdown Preview Enhanced
     "marp-team.marp-vscode", // Marp for VS Code
     "ms-edgedevtools.vscode-edge-devtools", // Microsoft Edge Developer Tools
+    "esbenp.prettier-vscode", // Prettier - Code formatter
+    "stylelint.vscode-stylelint", // stylelint
     "henoc.svgeditor", // SVG Editor
     "wayou.vscode-todo-highlight", // TODO Highlight
     "fabiospampinato.vscode-todo-plus", // Todo+
     "octref.vetur", // Vetur
-    "ronnidc.nunjucks", // Nunjucks
+    "ronnidc.nunjucks" // Nunjucks
   ]
 }

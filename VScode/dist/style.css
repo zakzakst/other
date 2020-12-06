@@ -1,3 +1,9 @@
 #sample-list {
+  position: relative;
+  top: 0;
   display: none;
+  width: 100px;
+  height: 100px;
+  font-size: 1rem;
+  color: #000;
 }
