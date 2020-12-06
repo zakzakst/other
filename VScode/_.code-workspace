@@ -8,13 +8,13 @@
     // 設定：配色の変更
     // 参考：https://qiita.com/deren2525/items/6bc099ae8c05e3076055 、 https://code.visualstudio.com/api/references/theme-color
     "workbench.colorCustomizations": {
-      "titleBar.activeBackground":"#660000"
+      "titleBar.activeBackground": "#660000"
     },
     // 設定：ファイルエクスプローラーに非表示
     "files.exclude": {
       // "dist": true,
       ".nuxt": true,
-      ".editorconfig": true,
+      ".editorconfig": true
     },
     // 設定：拡張機能の推奨表示をしない
     "extensions.ignoreRecommendations": false,
@@ -48,7 +48,7 @@
         "text": "TODO:",
         "color": "#FFF",
         "backgroundColor": "#662200",
-        "overviewRulerColor": "transparent",
+        "overviewRulerColor": "transparent"
       },
       {
         "text": "FIXME",
@@ -67,5 +67,14 @@
     "todo.colors.cancelled": "#884444",
     "todo.colors.project": "#99dddd",
     "todo.colors.projectStatistics": "#99dddd",
+    "editor.formatOnSave": true,
+    // 設定：stylelint
+    // 参考：https://qiita.com/y-w/items/bd7f11013fe34b69f0df、https://qiita.com/nabepon/items/4168eae542861cfd69f7
+    "css.validate": false,
+    "scss.validate": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": true
+    }
   }
 }
