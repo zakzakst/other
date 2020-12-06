@@ -1,9 +1,13 @@
 #sample-list {
+  display: none;
+}
+.stylelint-sample {
   position: relative;
   top: 0;
   display: none;
-  width: 100px;
+  width: calc(100px + 10%);
   height: 100px;
   font-size: 1rem;
   color: #000;
+  background: url('/path/to/image.jpg');
 }

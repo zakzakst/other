@@ -3,5 +3,10 @@
     "stylelint-config-recommended-scss",
     "stylelint-config-prettier",
     "stylelint-config-recess-order"
-  ]
+  ],
+  "rules": {
+    "function-calc-no-unspaced-operator": true,
+    "indentation": 2,
+    "string-quotes": "single"
+  }
 }

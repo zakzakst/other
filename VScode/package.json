@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint:css": "stylelint --fix **/*.{css,scss,sass}"
+    "lint:css": "stylelint --fix **/*.{css,scss,sass}",
+    "lint:js": "eslint --fix **/*.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
     "prettier": "^2.2.1",
     "stylelint": "^13.8.0",
     "stylelint-config-prettier": "^8.0.2",
